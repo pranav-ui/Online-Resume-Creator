@@ -1,0 +1,208 @@
+<!-- <h1 class="headerContainer">Online Resume creator</h1>
+<div>
+    Welcome Theme 1
+</div> -->
+<!DOCTYPE html>
+<html>
+
+
+<head>
+	<title>Theme1</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jspdf/0.9.0rc1/jspdf.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/2.3.2/jspdf.plugin.autotable.js"></script>
+
+</head>
+
+<body class="theme">
+	<div id="myHeader">
+	</div>
+	<div class="content">
+		<div class="row">
+			<div class="col-md-3">
+				<label>Full Name :</label>
+			</div>
+			<div class="col-md-4">
+				<input  type="text" id="fullName" name="fullName" placeholder="Full Name">
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-3">
+				<label>Date Of Birth :</label>
+			</div>
+			<div class="col-md-4">
+				<input  type="date" id="dob" name="dob" placeholder="Date Of Birth">
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-3">
+				<label>Email Id :</label>
+			</div>
+			<div class="col-md-4">
+				<input  type="email" id="emailId" name="emailId" placeholder="Email Id">
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-3">
+				<label>Phone No. :</label>
+			</div>
+			<div class="col-md-4">
+				<input  type="tel" onkeypress="return telValidator(event)" maxlength="10" name="Phone"
+				 id="phone" placeholder="Contact No.">
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-3">
+				<label>Career Objective :</label>
+			</div>
+			<div class="col-md-4">
+				<textarea  id="careerObjective" rows="4" cols="50" maxlength="200"></textarea>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col md-3">
+				<table id="basic-table">"
+					<tr>
+						<th>Examinations</th>
+						<th>University/Board</th>
+						<th>Institute</th>
+						<th>Year of Passing</th>
+						<th>Percentage/CGPA</th>
+					</tr>
+					<tr>
+						<td>B.Tech</td>
+						<td>
+							<input type="text" name="btechBoard" id="btechBoard" placeholder="Board">
+						</td>
+						<td>
+							<input type="text" id="btechInstitute" placeholder="Institute">
+						</td>
+						<td>
+							<input type="year" id="btechYear" placeholder="Year of Passing">
+						</td>
+						<td>
+							<input type="number" id="btechGrade" placeholder="Percentage/CGPA">
+						</td>
+						<tr>
+							<td>H.S.C</td>
+							<td>
+								<input type="text" id="hscBoard" placeholder="Board">
+							</td>
+							<td>
+								<input type="text" id="hscInstitute" placeholder="Institute">
+							</td>
+							<td>
+								<input type="year" id="hscYear" placeholder="Year of Passing">
+							</td>
+							<td>
+								<input type="number" id="hscGrade" placeholder="Percentage/CGPA">
+							</td>
+						</tr>
+						<tr>
+							<td>S.S.C</td>
+							<td>
+								<input type="text" id="sscBoard" placeholder="Board">
+							</td>
+							<td>
+								<input type="text" id="sscInstitute" placeholder="Institute">
+							</td>
+							<td>
+								<input type="year" id="sscYear" placeholder="Year of Passing">
+							</td>
+							<td>
+								<input type="number" id="sscGrade" placeholder="Percentage/CGPA">
+							</td>
+						</tr>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-3">
+				<label>Operating Systems</label>
+			</div>
+			<div class="col-md-4">
+				<input type="text" id="operatingSystems" name="operatingSystems" placeholder="Operating Systems">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-3">
+				<label>Languages</label>
+			</div>
+			<div class="col-md-4">
+				<input type="text" id="languages" name="languages" placeholder="languages">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-3">
+				<label>Tools</label>
+			</div>
+			<div class="col-md-4">
+				<input type="text" id="tools" name="tools" placeholder="tools">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-3">
+				<label>Internship</label>
+			</div>
+			<div class="col-md-4">
+				<textarea id="Internship" rows="4" cols="50" maxlength="200"></textarea>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-3">
+				<label>Certification</label>
+			</div>
+			<div class="col-md-4">
+				<textarea id="Certification" rows="4" cols="50" maxlength="200"></textarea>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-3">
+				<label>Co-Curricular Achievements and Activities</label>
+			</div>
+			<div class="col-md-4">
+				<textarea id="Activities" rows="4" cols="50" maxlength="200"></textarea>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-3">
+				<label>Projects</label>
+			</div>
+			<div class="col-md-4">
+				<textarea id="Projects" rows="4" cols="50" maxlength="200"></textarea>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-3">
+				<label>Hobbies / Interest</label>
+			</div>
+			<div class="col-md-4">
+				<textarea id="Hobbies" rows="4" cols="50" maxlength="200"></textarea>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<button onclick="downloadPdf()">Download PDF</button>
+			</div>
+		</div>
+
+
+	</div>
+</body>
+<script src="onlineResumeBuilder.js">
+</script>
+
+</html>
